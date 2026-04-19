@@ -8,16 +8,16 @@
     --accent-violet: #7C3AED;
     --cta-burgundy: #7A1E3A;
     --cta-fuchsia: #D946EF;
-    
-    /* Typography - NO ITALICS per instructions */
+
+    /* Typography */
     --font-h1: 'Fraunces', serif;
     --font-headline: 'Anton', sans-serif;
     --font-body: 'Inter', sans-serif;
-    
+
     /* Effects */
-    --glass-bg: rgba(255, 255, 255, 0.30);
-    --glass-blur: 24px;
-    --card-width: 460px;
+    --glass-bg: rgba(255, 255, 255, 0.32);
+    --glass-blur: 28px;
+    --card-width: 580px;
     --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
@@ -30,15 +30,22 @@
 body {
     font-family: var(--font-body);
     color: var(--text-primary);
-    background: url('assets/fondo-dreamy.jpg') no-repeat center center fixed;
-    background-size: cover;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 32px 20px;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: url('assets/fondo-dreamy.jpg') no-repeat center center;
+    background-size: cover;
+    z-index: -1;
 }
 
 /* Container / Mobile-First Card */
@@ -48,10 +55,10 @@ body {
     -webkit-backdrop-filter: blur(var(--glass-blur));
     width: 100%;
     max-width: var(--card-width);
-    padding: 40px 32px;
-    border-radius: 32px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    padding: 56px 48px;
+    border-radius: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 32px 64px -12px rgba(0, 0, 0, 0.18);
     text-align: center;
     animation: fadeInUp 0.8s ease-out forwards;
 }
@@ -63,14 +70,14 @@ body {
 
 /* HERO */
 .hero {
-    margin-bottom: 24px;
+    margin-bottom: 32px;
 }
 
 .hero h1 {
     font-family: var(--font-h1);
-    font-size: 42px;
+    font-size: 52px;
     line-height: 1.1;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
     color: var(--text-primary);
     position: relative;
     display: inline-block;
@@ -93,37 +100,37 @@ body {
 }
 
 .tagline {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 500;
     color: var(--text-secondary);
     line-height: 1.4;
-    max-width: 320px;
+    max-width: 380px;
     margin: 0 auto;
 }
 
 /* BIENVENIDA */
 .bienvenida {
-    margin-bottom: 24px;
+    margin-bottom: 32px;
 }
 
 .bienvenida p {
-    font-size: 15px;
-    line-height: 1.6;
+    font-size: 16px;
+    line-height: 1.7;
     color: var(--text-secondary);
 }
 
 /* QUÉ VAS A RECIBIR */
 .que-recibes {
-    margin-bottom: 24px;
+    margin-bottom: 32px;
     text-align: left;
 }
 
 .que-recibes h2 {
     font-family: var(--font-headline);
-    font-size: 24px;
+    font-size: 26px;
     text-transform: uppercase;
     color: var(--accent-violet);
-    margin-bottom: 12px;
+    margin-bottom: 16px;
     text-align: center;
 }
 
@@ -131,16 +138,16 @@ body {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 14px;
 }
 
 .que-recibes li {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
     color: var(--text-primary);
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
 }
 
 .que-recibes li::before {
@@ -164,8 +171,8 @@ body {
 /* SUSCRIPCIÓN */
 .suscripcion .puente {
     font-weight: 600;
-    font-size: 14px;
-    margin-bottom: 20px;
+    font-size: 15px;
+    margin-bottom: 24px;
     color: var(--text-primary);
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -175,35 +182,37 @@ body {
 .mailerlite-form {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
 }
 
 .mailerlite-form input {
     width: 100%;
-    padding: 16px;
-    border: 1px solid rgba(124, 58, 237, 0.2);
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.5);
+    padding: 18px 20px;
+    border: 1.5px solid rgba(124, 58, 237, 0.2);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.55);
     font-family: var(--font-body);
+    font-size: 16px;
     outline: none;
     transition: var(--transition);
 }
 
 .mailerlite-form input:focus {
     background: white;
-    box-shadow: 0 0 15px rgba(124, 58, 237, 0.15);
+    border-color: rgba(124, 58, 237, 0.5);
+    box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.08);
 }
 
 .mailerlite-form button {
     width: 100%;
-    padding: 16px;
+    padding: 18px;
     background: linear-gradient(135deg, var(--cta-burgundy), var(--cta-fuchsia));
     color: white;
     border: none;
-    border-radius: 12px;
+    border-radius: 14px;
     font-family: var(--font-body);
     font-weight: 600;
-    font-size: 16px;
+    font-size: 17px;
     cursor: pointer;
     position: relative;
     overflow: hidden;
@@ -254,14 +263,14 @@ body {
 }
 
 .success-star {
-    font-size: 2.5rem;
+    font-size: 3rem;
     color: var(--accent-violet);
     animation: twinkle 1s infinite alternate;
 }
 
 .success-title {
     font-family: var(--font-h1);
-    font-size: 28px;
+    font-size: 48px;
     color: var(--text-primary);
 }
 
@@ -350,6 +359,80 @@ footer p {
 
 .ig-link:hover {
     opacity: 0.7;
+}
+
+/* ─── RESPONSIVE ─────────────────────────────────── */
+
+/* Tablet (≤ 640px) */
+@media (max-width: 640px) {
+    body {
+        padding: 24px 16px;
+        align-items: flex-start;
+    }
+
+    .container {
+        padding: 44px 32px;
+        border-radius: 32px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .tagline {
+        font-size: 16px;
+        max-width: 100%;
+    }
+
+    .bienvenida p {
+        font-size: 15px;
+    }
+
+    .que-recibes h2 {
+        font-size: 22px;
+    }
+
+    .que-recibes li {
+        font-size: 15px;
+    }
+
+    .mailerlite-form input {
+        padding: 16px 18px;
+        font-size: 16px;
+    }
+
+    .mailerlite-form button {
+        padding: 16px;
+        font-size: 16px;
+    }
+
+    .success-title {
+        font-size: 40px;
+    }
+}
+
+/* Mobile (≤ 390px) */
+@media (max-width: 390px) {
+    .container {
+        padding: 36px 24px;
+        border-radius: 28px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .tagline {
+        font-size: 15px;
+    }
+
+    .que-recibes li {
+        font-size: 14px;
+    }
+
+    .success-title {
+        font-size: 34px;
+    }
 }
 
 /* UTILS */
