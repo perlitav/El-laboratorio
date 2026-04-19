@@ -284,6 +284,15 @@ body::before {
     text-align: center;
 }
 
+.success-step {
+    font-size: 13px;
+    color: var(--text-secondary);
+    opacity: 0.75;
+    max-width: 300px;
+    text-align: center;
+    line-height: 1.5;
+}
+
 footer {
     padding-top: 24px;
 }
