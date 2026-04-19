@@ -282,6 +282,47 @@ footer p {
     color: var(--text-secondary);
 }
 
+/* BIENVENIDA PAGE */
+.bienvenida-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 48px 32px;
+}
+
+.bienvenida-title {
+    font-family: var(--font-h1);
+    font-size: 48px;
+    color: var(--text-primary);
+}
+
+.bienvenida-sub {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-primary);
+    text-align: center;
+}
+
+.bienvenida-info {
+    font-size: 14px;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.ig-link {
+    margin-top: 8px;
+    color: var(--accent-violet);
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.ig-link:hover {
+    opacity: 0.7;
+}
+
 /* UTILS */
 .grain-overlay {
     position: fixed;
