@@ -51,8 +51,6 @@
                 <div class="success-state" id="success-state" hidden>
                     <span class="success-star">✦</span>
                     <p class="success-title">¡Geniaaal!</p>
-                    <p class="success-sub">Bienvenidx a bordo de la nave que te llevará al labo.</p>
-                    <p class="success-step">Pronto vas a recibir el primer mail.</p>
                     <button class="close-btn" onclick="window.close()">Cerrar ✦</button>
                     <p class="close-hint">Si el botón no funciona, podés cerrar esta pestaña.</p>
                 </div>
@@ -70,15 +68,17 @@
                         .finally(() => {
                             form.hidden = true;
                             successState.hidden = false;
+                            document.getElementById('antifriccion').hidden = true;
+                            document.getElementById('footer').hidden = true;
                         });
                 });
             </script>
             
-            <p class="antifriccion">Un mail cada 15 días. Te bajas cuando quieras.</p>
+            <p class="antifriccion" id="antifriccion">Un mail cada 15 días. Te bajas cuando quieras.</p>
         </section>
 
         <!-- FOOTER -->
-        <footer>
+        <footer id="footer">
             <p>— Perlhada</p>
         </footer>
     </main>
