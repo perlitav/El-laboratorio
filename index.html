@@ -67,7 +67,7 @@
                     fetch(MAILERLITE_URL, { method: 'POST', body: data, mode: 'no-cors' })
                         .finally(() => {
                             form.hidden = true;
-                            successState.hidden = false;
+                            successState.classList.add('visible');
                             document.getElementById('antifriccion').hidden = true;
                             document.getElementById('footer').hidden = true;
                         });
