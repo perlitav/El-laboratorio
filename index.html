@@ -67,13 +67,15 @@
                     e.preventDefault();
                     const data = new FormData(form);
                     fetch(MAILERLITE_URL, { method: 'POST', body: data, mode: 'no-cors' })
-                        .finally(() => {
-                            form.hidden = true;
-                            successState.classList.add('visible');
-                            document.getElementById('antifriccion').hidden = true;
-                            document.getElementById('footer').hidden = true;
-                        });
+                        .finally(showSuccess);
                 });
+
+                function showSuccess() {
+                    form.style.display = 'none';
+                    document.getElementById('antifriccion').style.display = 'none';
+                    document.getElementById('footer').style.display = 'none';
+                    successState.classList.add('visible');
+                }
             </script>
             
             <p class="antifriccion" id="antifriccion">Un mail cada 15 días. Te bajas cuando quieras.</p>
