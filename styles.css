@@ -253,8 +253,9 @@ body::before {
     display: none;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    padding: 24px 0 8px;
+    justify-content: center;
+    gap: 16px;
+    min-height: 240px;
 }
 
 .success-state.visible {
@@ -270,45 +271,17 @@ body::before {
 
 .success-title {
     font-family: var(--font-h1);
-    font-size: 48px;
+    font-size: 52px;
     color: var(--text-primary);
 }
 
 .success-sub {
-    font-size: 15px;
+    font-size: 18px;
+    font-weight: 500;
     color: var(--text-secondary);
-}
-
-.success-step {
-    font-size: 13px;
-    color: var(--text-secondary);
-    margin-top: 4px;
-}
-
-.close-btn {
-    margin-top: 12px;
-    padding: 12px 32px;
-    background: linear-gradient(135deg, var(--cta-burgundy), var(--cta-fuchsia));
-    color: white;
-    border: none;
-    border-radius: 12px;
-    font-family: var(--font-body);
-    font-weight: 600;
-    font-size: 15px;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.close-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(217, 70, 239, 0.3);
-}
-
-.close-hint {
-    font-size: 11px;
-    color: var(--text-secondary);
-    margin-top: 6px;
-    opacity: 0.7;
+    line-height: 1.5;
+    max-width: 340px;
+    text-align: center;
 }
 
 footer {

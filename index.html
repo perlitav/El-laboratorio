@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Newsletter Perlhada | Ethereal Tech</title>
-    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -12,79 +11,75 @@
     <div class="grain-overlay"></div>
 
     <main class="container">
-        <!-- HERO -->
-        <section class="hero">
-            <h1>
-                Un mundo creativo y tech
-                <span class="star star-1">✦</span>
-                <span class="star star-2">✦</span>
-            </h1>
-            <p class="tagline">Para que la tecnología no te intimide, te potencie.</p>
-        </section>
+        <!-- CONTENIDO PRINCIPAL -->
+        <div id="main-content">
+            <!-- HERO -->
+            <section class="hero">
+                <h1>
+                    Un mundo creativo y tech
+                    <span class="star star-1">✦</span>
+                    <span class="star star-2">✦</span>
+                </h1>
+                <p class="tagline">Para que la tecnología no te intimide, te potencie.</p>
+            </section>
 
-        <!-- BIENVENIDA -->
-        <section class="bienvenida">
-            <p>Experimento mi creatividad y te cuento mis descubrimientos para que veas la tecnología como herramienta para potenciarte y no te intimides ante ella, porque una vez que te conoces, ya es imposible que no quieras crear desde ahí.</p>
-        </section>
+            <!-- BIENVENIDA -->
+            <section class="bienvenida">
+                <p>Experimento mi creatividad y te cuento mis descubrimientos para que veas la tecnología como herramienta para potenciarte y no te intimides ante ella, porque una vez que te conoces, ya es imposible que no quieras crear desde ahí.</p>
+            </section>
 
-        <!-- QUÉ VAS A RECIBIR -->
-        <section class="que-recibes">
-            <h2>¿Qué vas a recibir?</h2>
-            <ul>
-                <li>Potenciar tu creatividad con IA</li>
-                <li>Editar videos y fotos</li>
-                <li>Armar webs, reels y piezas digitales</li>
-                <li>Usar tu teléfono y tu compu como aliados</li>
-            </ul>
-        </section>
+            <!-- QUÉ VAS A RECIBIR -->
+            <section class="que-recibes">
+                <h2>¿Qué vas a recibir?</h2>
+                <ul>
+                    <li>Potenciar tu creatividad con IA</li>
+                    <li>Editar videos y fotos</li>
+                    <li>Armar webs, reels y piezas digitales</li>
+                    <li>Usar tu teléfono y tu compu como aliados</li>
+                </ul>
+            </section>
 
-        <!-- SUSCRIPCIÓN -->
-        <section class="suscripcion">
-            <p class="puente">Lo que no te alcanzo a contar en IG.</p>
-            
-            <div id="mailerlite-form">
+            <!-- SUSCRIPCIÓN -->
+            <section class="suscripcion">
+                <p class="puente">Lo que no te alcanzo a contar en IG.</p>
                 <form class="mailerlite-form" id="subscribe-form">
                     <input type="text" name="fields[name]" placeholder="Tu nombre..." required>
                     <input type="email" name="fields[email]" placeholder="tu@email.com" required>
                     <button type="submit">Suscribirme</button>
                 </form>
-                <div class="success-state" id="success-state">
-                    <span class="success-star">✦</span>
-                    <p class="success-title">¡Geniaaal!</p>
-                    <p class="success-sub">Bienvenidx a bordo de la nave que te llevará al labo.</p>
-                    <p class="success-step">En segundos vas a recibir el siguiente paso de esta aventura por mail.</p>
-                    <button class="close-btn" onclick="window.close()">Cerrar ✦</button>
-                    <p class="close-hint">Si el botón no funciona, podés cerrar esta pestaña.</p>
-                </div>
-            </div>
+                <p class="antifriccion">Un mail cada 15 días. Te bajas cuando quieras.</p>
+            </section>
 
-            <script>
-                const form = document.getElementById('subscribe-form');
-                const successState = document.getElementById('success-state');
-                const MAILERLITE_URL = 'https://assets.mailerlite.com/jsonp/1642728/forms/185133193993652222/subscribe';
+            <footer>
+                <p>— Perlhada</p>
+            </footer>
+        </div>
 
-                form.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    const data = new FormData(form);
-                    fetch(MAILERLITE_URL, { method: 'POST', body: data, mode: 'no-cors' })
-                        .finally(showSuccess);
-                });
-
-                function showSuccess() {
-                    form.style.display = 'none';
-                    document.getElementById('antifriccion').style.display = 'none';
-                    document.getElementById('footer').style.display = 'none';
-                    successState.classList.add('visible');
-                }
-            </script>
-            
-            <p class="antifriccion" id="antifriccion">Un mail cada 15 días. Te bajas cuando quieras.</p>
-        </section>
-
-        <!-- FOOTER -->
-        <footer id="footer">
-            <p>— Perlhada</p>
-        </footer>
+        <!-- SUCCESS STATE -->
+        <div class="success-state" id="success-state">
+            <span class="success-star">✦</span>
+            <p class="success-title">¡Geniaaal!</p>
+            <p class="success-sub">Bienvenidx a bordo de la nave que te llevará al labo.</p>
+        </div>
     </main>
+
+    <script>
+        const form = document.getElementById('subscribe-form');
+        const successState = document.getElementById('success-state');
+        const mainContent = document.getElementById('main-content');
+        const MAILERLITE_URL = 'https://assets.mailerlite.com/jsonp/1642728/forms/185133193993652222/subscribe';
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const data = new FormData(form);
+            fetch(MAILERLITE_URL, { method: 'POST', body: data, mode: 'no-cors' })
+                .finally(showSuccess);
+        });
+
+        function showSuccess() {
+            mainContent.style.display = 'none';
+            successState.classList.add('visible');
+        }
+    </script>
 </body>
 </html>
