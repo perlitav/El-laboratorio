@@ -268,9 +268,34 @@ body {
 
 .success-step {
     font-size: 13px;
-    color: var(--accent-violet);
-    font-weight: 500;
+    color: var(--text-secondary);
     margin-top: 4px;
+}
+
+.close-btn {
+    margin-top: 12px;
+    padding: 12px 32px;
+    background: linear-gradient(135deg, var(--cta-burgundy), var(--cta-fuchsia));
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.close-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(217, 70, 239, 0.3);
+}
+
+.close-hint {
+    font-size: 11px;
+    color: var(--text-secondary);
+    margin-top: 6px;
+    opacity: 0.7;
 }
 
 footer {
