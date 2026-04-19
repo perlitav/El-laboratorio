@@ -1,0 +1,262 @@
+/* Newsletter Perlhada - Ethereal Tech Design */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:opsz,wght@9..144,700&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+    /* Colors */
+    --text-primary: #2D1B3D;
+    --text-secondary: #5C4B6E;
+    --accent-violet: #7C3AED;
+    --cta-burgundy: #7A1E3A;
+    --cta-fuchsia: #D946EF;
+    
+    /* Typography - NO ITALICS per instructions */
+    --font-h1: 'Fraunces', serif;
+    --font-headline: 'Anton', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    
+    /* Effects */
+    --glass-bg: rgba(255, 255, 255, 0.30);
+    --glass-blur: 24px;
+    --card-width: 460px;
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-primary);
+    background: url('assets/fondo-dreamy.jpg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+/* Container / Mobile-First Card */
+.container {
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    width: 100%;
+    max-width: var(--card-width);
+    padding: 40px 32px;
+    border-radius: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* HERO */
+.hero {
+    margin-bottom: 24px;
+}
+
+.hero h1 {
+    font-family: var(--font-h1);
+    font-size: 42px;
+    line-height: 1.1;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+    position: relative;
+    display: inline-block;
+}
+
+/* Twinkling Stars */
+.star {
+    position: absolute;
+    color: var(--accent-violet);
+    font-size: 1.2rem;
+    animation: twinkle 1s infinite alternate;
+}
+
+.star-1 { top: -10px; right: -15px; }
+.star-2 { bottom: 10px; left: -25px; animation-delay: 0.5s; }
+
+@keyframes twinkle {
+    0% { opacity: 0.3; transform: scale(0.8) rotate(0deg); }
+    100% { opacity: 1; transform: scale(1.2) rotate(45deg); }
+}
+
+.tagline {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    line-height: 1.4;
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+/* BIENVENIDA */
+.bienvenida {
+    margin-bottom: 24px;
+}
+
+.bienvenida p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+/* QUÉ VAS A RECIBIR */
+.que-recibes {
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.que-recibes h2 {
+    font-family: var(--font-headline);
+    font-size: 24px;
+    text-transform: uppercase;
+    color: var(--accent-violet);
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.que-recibes ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.que-recibes li {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.que-recibes li::before {
+    content: "✦";
+    color: var(--accent-violet);
+    font-weight: bold;
+}
+
+/* MEME */
+.huevito {
+    margin-bottom: 24px;
+}
+
+.huevito img {
+    width: 140px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* SUSCRIPCIÓN */
+.suscripcion .puente {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* INTEGRATION FORM */
+.mailerlite-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.mailerlite-form input {
+    width: 100%;
+    padding: 16px;
+    border: 1px solid rgba(124, 58, 237, 0.2);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.5);
+    font-family: var(--font-body);
+    outline: none;
+    transition: var(--transition);
+}
+
+.mailerlite-form input:focus {
+    background: white;
+    box-shadow: 0 0 15px rgba(124, 58, 237, 0.15);
+}
+
+.mailerlite-form button {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, var(--cta-burgundy), var(--cta-fuchsia));
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+/* Shimmer animation */
+.mailerlite-form button::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 20%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.4);
+    transform: rotate(30deg);
+    animation: shimmer 3.5s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translate(-100%, -100%) rotate(30deg); }
+    30%, 100% { transform: translate(400%, 400%) rotate(30deg); }
+}
+
+.mailerlite-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(217, 70, 239, 0.3);
+}
+
+.antifriccion {
+    margin-top: 16px;
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+
+footer {
+    padding-top: 24px;
+}
+
+footer p {
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+/* UTILS */
+.grain-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 9999;
+}
