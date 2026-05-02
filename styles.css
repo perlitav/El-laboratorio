@@ -119,6 +119,10 @@ body::before {
     color: var(--text-secondary);
 }
 
+.bienvenida p + p {
+    margin-top: 20px;
+}
+
 /* QUÉ VAS A RECIBIR */
 .que-recibes {
     margin-bottom: 32px;
